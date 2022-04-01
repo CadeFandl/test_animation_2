@@ -9,8 +9,8 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 
 # constants
-WIDTH = 400
-HEIGHT = 400
+WIDTH = 1440
+HEIGHT = 900
 FPS = 3
 
 # RGB colors
@@ -36,7 +36,7 @@ my_images = [
 # changes size of all images to fit screen
 for i in range(len(my_images)):
     my_images[i] = pygame.transform.scale(my_images[i], 
-    (300, 300))
+   (450, 450))
 
 # set Window
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -45,7 +45,7 @@ WINDOW.fill(skyBlue)
 
 
 # set up your font
-font = pygame.font.Font('./fonts/NunitoSans-Black.ttf', 15)
+font = pygame.font.Font('./fonts/NunitoSans-Black.ttf', 30)
 
 # create your text
 text = font.render('Pyramids, drawn by Zayn Abada,', True, black, skyBlue)
@@ -69,7 +69,7 @@ def drawShape():
   global image_count
   if (image_count == 3):
     image_count = 0
-  WINDOW.blit(my_images[image_count], (55, 100))
+  WINDOW.blit(my_images[image_count], (500, 300))
   pygame.display.flip()
   image_count += 1
   
@@ -81,7 +81,6 @@ while running and timer < 50:
 
   # update timer
   timer += 1
-
   # check if "X" is clicked by user 
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
